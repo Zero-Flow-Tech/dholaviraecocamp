@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dholavira Eco Camp | Meraki Stays</title>
+  <meta name="description" content="Stay at Dholavira Eco Camp - Meraki Stays. Authentic village stay with tents, homestay, local food & desert views near Dholavira Archeological Site.">
+  <meta name="keywords" content="Dholavira stay, Eco camp Kutch, Desert camping Gujarat, Meraki Stays, Dholavira Homestay, Rural tourism Gujarat">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://www.dholaviraecocamp.com/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            meraki: {
+              600: "#059669",
+              700: "#047857"
+            }
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    h1 {line-height: 2;}
+    /* reveal animation defaults */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 600ms ease, transform 600ms ease;
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger delays */
+    .reveal.delay-100 { transition-delay: 120ms; }
+    .reveal.delay-200 { transition-delay: 240ms; }
+
+    .experience-card {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 12rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .experience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .testimonial-card p { font-style: italic; }
+    .testimonial-card span {
+      display: block;
+      margin-top: 0.75rem;
+      font-weight: 600;
+      color: #047857;
+    }
+
+    .meal-card {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      width: 12rem;
+      transition: transform 0.3s ease;
+    }
+    .meal-card:hover { transform: translateY(-5px); }
+    #whatsappBtn { animation: pulse 1.5s infinite; }
+
+    .nav-link {
+      color: #334155;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-link::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0%;
+      background: #059669;
+      transition: width 250ms ease;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { width: 100%; }
+
+    /* mobile menu link */
+    .mobile-link {
+      padding: 10px 8px;
+      border-radius: 8px;
+      color: #0f172a;
+    }
+    .mobile-link:hover { background: #f8fafc; }
+
+    /* image soft zoom */
+    img { transition: transform 0.5s ease, opacity 0.4s ease; }
+    img.loaded { opacity: 1; transform: none; }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.9; }
+    }
+  </style>
+</head>
+
+<body class="antialiased font-[Poppins] bg-slate-50 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="fixed w-full z-50 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3">
+          <img src="https://img1.wsimg.com/isteam/ip/d85e52d8-a88a-4a23-81ee-665b4bcb539e/IMG_0034.png" alt="Dholavira Eco Camp" class="w-40 md:w-52 object-contain" onerror="this.src='https://picsum.photos/seed/logo/80/80'">
+        </a>
+
+        <!-- Desktop links -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm" aria-label="Main Navigation">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#stay">Stay</a>
+          <a class="nav-link" href="#experiences">Experiences</a>
+          <a class="nav-link" href="#meals">Meals</a>
+          <a class="nav-link" href="#map">Map</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/917778977891" target="_blank" class="hidden sm:inline-block bg-meraki-600 text-white px-4 py-2 rounded-lg text-md shadow">Book Now</a>
+
+          <!-- Mobile hamburger -->
+          <button id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" class="lg:hidden p-2 rounded-md hover:bg-slate-100">
+            <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
+      <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+      <div class="absolute top-0 right-0 w-72 max-w-[85%] h-full bg-white p-6 shadow-xl">
+        <div class="flex items-center justify-between mb-6">
+          <img src="https://img1.wsimg.com/isteam/ip/d85e52d8-a88a-4a23-81ee-665b4bcb539e/IMG_0034.png" alt="Dholavira Eco Camp" class="w-32 object-contain" onerror="this.src='https://picsum.photos/seed/logo/80/80'">
+          <button id="mobileCloseBtn" aria-label="Close menu" class="p-2 rounded-md hover:bg-slate-100">✕</button>
+        </div>
+
+        <nav class="flex flex-col">
+          <a class="mobile-link" href="#about">About</a>
+          <a class="mobile-link" href="#stay">Stay</a>
+          <a class="mobile-link" href="#experiences">Experiences</a>
+          <a class="mobile-link" href="#meals">Meals</a>
+          <a class="mobile-link" href="#map">Map</a>
+          <a class="mobile-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="mt-6">
+          <a href="https://wa.me/917778977891" target="_blank" class="block text-center bg-meraki-600 text-white py-2 rounded-lg">Message on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- HERO -->
+  <section class="relative bg-cover bg-center min-h-[90vh]" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
+      <h1 class="text-white text-4xl md:text-6xl font-bold mb-4 max-w-7xl text-balance leading-tight reveal">Experience Raw, Rural, and Authentic Dholavira</h1>
+      <p class="text-gray-200 text-lg mb-6 max-w-7xl text-balance reveal">Stay amidst nature at Meraki Stays - Dholavira Eco Camp, where culture meets comfort.</p>
+      <a href="https://wa.me/917778977891" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 font-bold text-white px-6 py-3 rounded-lg shadow-md reveal text-2xl">Book Your Stay</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center px-6">
+      <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-4 reveal">About Dholavira Eco Camp</h2>
+      <p class="max-w-3xl mx-auto text-gray-700 leading-relaxed reveal">
+        Meraki Stays - Dholavira Eco Camp offers a raw, rural, and authentic stay experience in the personal home space of an expert local tourist guide. 
+        It's designed for solo travelers, families, and groups — offering a warm, homely vibe connected deeply to Dholavira's culture and heritage.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stay Options -->
+  <section id="stay" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center text-emerald-700 mb-10 reveal">Stay Options</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Citadel Camp -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden reveal">
+          <img src="https://images.unsplash.com/photo-1600423115367-9e78c1c0b77b?auto=format&fit=crop&w=800&q=80" alt="Citadel Camp" class="h-56 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-xl md:text-2xl font-semibold mb-2 text-emerald-700">Citadel Camp - Cottage Tent</h3>
+            <p class="text-gray-600 mb-4">Spacious tents (8x9 ft) arranged in an L-shape, ideal for groups or families.</p>
+            <p class="text-sm text-gray-700">Dual Sharing: ₹2000 | Extra Person: ₹500</p>
+          </div>
+        </div>
+
+        <!-- Middle Town Dome -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden reveal delay-100">
+          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=800&q=80" alt="Dome Tent" class="h-56 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-xl md:text-2xl font-semibold mb-2 text-emerald-700">Middle Town - Dome Tent</h3>
+            <p class="text-gray-600 mb-4">Quechua dome tents for a raw camping vibe. Perfect for adventurers.</p>
+            <p class="text-sm text-gray-700">₹500 per person</p>
+          </div>
+        </div>
+
+        <!-- Homestay -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden reveal delay-200">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Homestay" class="h-56 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-xl md:text-2xl font-semibold mb-2 text-emerald-700">A Homestay</h3>
+            <p class="text-gray-600 mb-4">Attached washroom and queen bed comfort for couples or families.</p>
+            <p class="text-sm text-gray-700">Dual Sharing: ₹2500 | Extra Person: ₹500</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="py-16 bg-gray-50 text-center">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-10 reveal">Why Choose Meraki Stays?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition reveal">
+          <h3 class="text-xl font-semibold mb-3">🏕 Authentic Rural Experience</h3>
+          <p>Live amidst the culture and connect with the roots of Dholavira — not just as a tourist, but as a guest of the land.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition reveal delay-100">
+          <h3 class="text-xl font-semibold mb-3">🌿 Eco-Friendly Living</h3>
+          <p>Minimal waste, solar lighting, and locally sourced food for a sustainable lifestyle experience.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition reveal delay-200">
+          <h3 class="text-xl font-semibold mb-3">👨‍👩‍👧‍👦 Family & Solo Friendly</h3>
+          <p>Perfect for solo travelers, couples, and families — with cozy tents, clean washrooms, and peaceful vibes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section id="experiences" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-10 reveal">Experiences</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal">
+          <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80" alt="Handicrafts" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Live Handicrafts</h3>
+          <p class="text-gray-600">Watch artisans create traditional crafts and take one home.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal delay-100">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Night Sky Gazing" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Night Sky Gazing</h3>
+          <p class="text-gray-600">Experience an unforgettable view of the desert's night sky.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal delay-200">
+          <img src="https://images.unsplash.com/photo-1535008652995-e95986556e32?auto=format&fit=crop&w=800&q=80" alt="Local Games" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Desi Village Games</h3>
+          <p class="text-gray-600">Enjoy traditional Kutch games and cultural dress-up experiences.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-16 bg-gray-50 text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-10 reveal">What Our Guests Say</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="testimonial-card reveal">
+          <p>"Beautiful place with warm hospitality. The host made us feel like family!"</p>
+          <span>- Priya S., Mumbai</span>
+        </div>
+        <div class="testimonial-card reveal delay-100">
+          <p>"A must-visit if you want to experience real Kutch. The campfire nights are magical."</p>
+          <span>- Rahul G., Pune</span>
+        </div>
+        <div class="testimonial-card reveal delay-200">
+          <p>"Clean tents, great food, and stunning desert sunsets. Highly recommended!"</p>
+          <span>- Sneha T., Ahmedabad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEALS -->
+  <section id="meals" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl md:text-4xl font-bold text-emerald-700 mb-10 reveal">Homemade Meals</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal">
+          <img src="https://images.pexels.com/photos/2297961/pexels-photo-2297961.jpeg" alt="Breakfast" class="rounded-lg mb-4 h-48 w-full object-cover" loading="lazy">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Breakfast</h3>
+          <p class="text-gray-600">Start your day with a fresh, traditional breakfast. ₹150/person</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal delay-100">
+          <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Lunch" class="rounded-lg mb-4 h-48 w-full object-cover" loading="lazy">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Lunch</h3>
+          <p class="text-gray-600">Authentic homemade Gujarati lunch. ₹250/person</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg reveal delay-200">
+          <img src="https://images.pexels.com/photos/262882/pexels-photo-262882.jpeg" alt="Dinner" class="rounded-lg mb-4 h-48 w-full object-cover" loading="lazy">
+          <h3 class="text-lg md:text-2xl font-semibold mb-2">Dinner</h3>
+          <p class="text-gray-600">Enjoy local flavors under the desert sky. ₹250/person</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map" class="py-16 bg-gray-50 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-8 reveal">Find Us</h2>
+    <div class="max-w-5xl mx-auto px-4 reveal">
+      <iframe src="https://www.google.com/maps?q=Dholavira%20Eco%20Camp&output=embed" width="100%" height="400" class="rounded-xl border-none" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- HOW TO REACH -->
+  <section class="py-16 bg-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-emerald-700 mb-6">How to Reach</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Dholavira Eco Camp is about 7 km from the UNESCO Dholavira site.  
+        You can reach here via Bhuj or Rapar.  
+        <br><strong>Nearest Airport:</strong> Bhuj (220 km)  
+        <br><strong>Nearest Railway Station:</strong> Bhachau (150 km)
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-emerald-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-2xl md:text-3xl font-semibold mb-4">Get in Touch</h3>
+        <p class="mb-1">📍 Dholavira, Kutch, Gujarat, India</p>
+        <p class="mb-1">📞 <a href="tel:+917778977891" class="hover:underline">+91 77789 77891</a></p>
+        <p class="mb-1">📧 <a href="mailto:DholaviraEcoCamp@gmail.com" class="hover:underline">DholaviraEcoCamp@gmail.com</a></p>
+        <p>🌍 <a href="https://www.dholaviraecocamp.com" target="_blank" class="hover:underline">dholaviraecocamp.com</a></p>
+      </div>
+      <div>
+        <p class="flex gap-3 align-center items-center justify-center mb-4">
+          <a href="https://instagram.com/DholaviraEcoCamp" target="_blank" aria-label="Visit Instagram" title="@DholaviraEcoCamp">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="h-8 w-8">
+          </a>
+          <a href="https://facebook.cofm/DholaviraEcoCamp" target="_blank" aria-label="Dholavira Eco Camp - Facebook Profile" title="Dholavira Eco Camp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="h-8 w-8">
+          </a>
+          <a href="https://share.google/XKco3gAgqvxbYBwPT" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Map" class="h-8 w-8">
+          </a>
+        </p>
+
+        <p class="flex items-center justify-center">
+          <a href="https://wa.me/917778977891" target="_blank" class="bg-white text-emerald-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">Book Your Stay</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-gray-900 text-gray-400 py-4 text-center text-sm">
+    © 2025 Dholavira Eco Camp | Crafted by Meraki Stays
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/917778977891" target="_blank" id="whatsappBtn" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 text-2xl">💬</a>
+  <script>
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      if (window.scrollY > 60) {
+        header.classList.add("shadow-md");
+      } else {
+        header.classList.remove("shadow-md");
+      }
+    });
+
+    window.addEventListener('load', () => {   // ✅ fixed event name
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+      const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
+      function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      mobileMenuBtn?.addEventListener('click', openMobileMenu);
+      mobileCloseBtn?.addEventListener('click', closeMobileMenu);
+      mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+
+      document.querySelectorAll('#mobileMenu a').forEach(a=>{
+        a.addEventListener('click', closeMobileMenu);
+      });
+
+      // IntersectionObserver for reveal animation
+      const reveals = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach(el => io.observe(el));
+
+      // Scrollspy and smooth scroll
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = Array.from(document.querySelectorAll('section[id]'));
+
+      function onScroll() {
+        const scrollPos = window.scrollY + 120;
+        navLinks.forEach(link => link.classList.remove('active'));
+        for (const sec of sections) {
+          if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+            const a = document.querySelector(`.nav-link[href="#${sec.id}"]`);
+            if (a) a.classList.add('active');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if (!href.startsWith('#') || href === '#') return;
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if (!el) return;
+          const offsetPosition = el.offsetTop - 72;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
